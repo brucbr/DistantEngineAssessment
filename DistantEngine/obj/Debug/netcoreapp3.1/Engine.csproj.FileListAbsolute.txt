@@ -1,0 +1,11 @@
+/home/barney/RiderProjects/DistantEngine/Engine/bin/Debug/netcoreapp3.1/Engine.deps.json
+/home/barney/RiderProjects/DistantEngine/Engine/bin/Debug/netcoreapp3.1/Engine.dll
+/home/barney/RiderProjects/DistantEngine/Engine/bin/Debug/netcoreapp3.1/Engine.pdb
+/home/barney/RiderProjects/DistantEngine/Engine/bin/Debug/netcoreapp3.1/SDL2-CS.dll
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.csprojAssemblyReference.cache
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.AssemblyInfoInputs.cache
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.AssemblyInfo.cs
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.csproj.CoreCompileInputs.cache
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.csproj.CopyComplete
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.dll
+/home/barney/RiderProjects/DistantEngine/Engine/obj/Debug/netcoreapp3.1/Engine.pdb

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_DistantEngine.-1905638198.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="DistantEngine" t="IncludeRecursive">
+        <e p="DistantEngine.csproj" t="IncludeRecursive" />
+        <e p="Graphics" t="Include">
+          <e p="Index.cs" t="Include" />
+          <e p="Texture.cs" t="Include" />
+          <e p="Window.cs" t="Include" />
+        </e>
+        <e p="Objects" t="Include">
+          <e p="Components" t="Include">
+            <e p="ColliderComponent.cs" t="Include" />
+            <e p="IGOComponent.cs" t="Include" />
+            <e p="Input.cs" t="Include" />
+            <e p="SpriteComponent.cs" t="Include" />
+          </e>
+          <e p="GameObject.cs" t="Include" />
+          <e p="TileMapping" t="Include">
+            <e p="ITileComponent.cs" t="Include" />
+            <e p="TextureMap.cs" t="Include" />
+            <e p="Tile.cs" t="Include" />
+          </e>
+          <e p="Vector2D.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="DistantEngine.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="DistantEngine.sln" t="IncludeFlat" />
+      <e p="Game" t="IncludeRecursive">
+        <e p="Game.csproj" t="IncludeRecursive" />
+        <e p="Objects" t="Include">
+          <e p="Player.cs" t="Include" />
+          <e p="Player2.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="assets" t="Include">
+          <e p="dirt.png" t="Include" />
+          <e p="grass.png" t="Include" />
+          <e p="player.png" t="Include" />
+          <e p="water.png" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Game.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

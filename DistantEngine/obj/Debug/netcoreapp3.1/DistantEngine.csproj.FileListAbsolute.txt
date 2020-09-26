@@ -1,0 +1,11 @@
+/home/barney/Documents/DistantEngine-master/DistantEngine/bin/Debug/netcoreapp3.1/DistantEngine.deps.json
+/home/barney/Documents/DistantEngine-master/DistantEngine/bin/Debug/netcoreapp3.1/DistantEngine.dll
+/home/barney/Documents/DistantEngine-master/DistantEngine/bin/Debug/netcoreapp3.1/DistantEngine.pdb
+/home/barney/Documents/DistantEngine-master/DistantEngine/bin/Debug/netcoreapp3.1/SDL2-CS.dll
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.csprojAssemblyReference.cache
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.AssemblyInfoInputs.cache
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.AssemblyInfo.cs
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.csproj.CoreCompileInputs.cache
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.csproj.CopyComplete
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.dll
+/home/barney/Documents/DistantEngine-master/DistantEngine/obj/Debug/netcoreapp3.1/DistantEngine.pdb
