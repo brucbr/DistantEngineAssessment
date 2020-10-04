@@ -29,16 +29,8 @@ namespace DistantEngine.Objects.Components
             BaseObject = obj;
         }
 
-        /// <summary>
-        /// WILL FAIL (Intentional)
-        /// An implementation of Initialise that satisfies IComp interface, while stating that you must provide arguments.
-        /// </summary>
-        /// <exception cref="ArgumentException"></exception>
-        public void Initialise()
-        {
-            throw new ArgumentException();
-        }
-        
+
+
         /// <summary>
         /// Initialise all values for basic single texture image.
         /// </summary>
@@ -49,17 +41,16 @@ namespace DistantEngine.Objects.Components
         /// <param name="dw">Desintation width</param>
         public void Initialise(string path, int sh, int sw, int dh, int dw)
         {
-            Position = BaseObject.Position;
+            Position = BaseObject.GetComponent<TransformComponent>().Position;
             _src.x = _src.y = 0;
             _src.h = sh;
             _src.w = sw;
             Dst.h = dh;
             Dst.w = dw;
-            Dst.x = Convert.ToInt32(Position.x);
-            Dst.y = Convert.ToInt32(Position.y);
+            Dst.x = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.x);
+            Dst.y = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.y);
             _tex = Texture.Set(path);
         }
-
         
         /// <summary>
         /// Initialise all values for multi-texture image. Pass through texture.
@@ -73,15 +64,15 @@ namespace DistantEngine.Objects.Components
         /// <param name="dw">Destination width</param>
         public void Initialise(IntPtr tex, int sh, int sw, int sx, int sy, int dh, int dw)
         {
-            Position = BaseObject.Position;
+            Position = BaseObject.GetComponent<TransformComponent>().Position;
             _src.x = sx;
             _src.y = sy;
             _src.h = sh;
             _src.w = sw;
             Dst.h = dh;
             Dst.w = dw;
-            Dst.x = Convert.ToInt32(Position.x);
-            Dst.y = Convert.ToInt32(Position.y);
+            Dst.x = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.x);
+            Dst.y = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.y);
             _tex = tex;
         }
         /// <summary>
@@ -89,9 +80,9 @@ namespace DistantEngine.Objects.Components
         /// </summary>
         public void Update()
         {
-            Position = BaseObject.Position;
-            Dst.x = Convert.ToInt32(Position.x);
-            Dst.y = Convert.ToInt32(Position.y);
+            Position = BaseObject.GetComponent<TransformComponent>().Position;
+            Dst.x = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.x);
+            Dst.y = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.y);
         }
 
         /// <summary>

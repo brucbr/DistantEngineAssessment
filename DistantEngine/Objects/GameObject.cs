@@ -19,9 +19,13 @@ namespace DistantEngine.Objects
         #region Variables
 
         private SDL.SDL_Rect _srect, _drect;
-        public Vector2D Position { get; set; } = new Vector2D();
 
         private Dictionary<Type, SortedList<int, IGoComponent>> _table = new Dictionary<Type, SortedList<int, IGoComponent>>();
+        public Dictionary<Type, SortedList<int, IGoComponent>> Table
+        {
+            get => _table;
+            set => _table = value;
+        }
 
         #endregion
         
@@ -34,8 +38,7 @@ namespace DistantEngine.Objects
         public GameObject(int xPos, int yPos)
         {
             // Set global x and y positions
-            Position.x = xPos;
-            Position.y = yPos;
+            AddComponent<TransformComponent>();
             Shared.objects.Add(this);
             this.ZIndex = 1;
             Shared.window.Reorder();
@@ -49,12 +52,12 @@ namespace DistantEngine.Objects
         /// <param name="zindex">Z-Index (Layer)</param>
         public GameObject(int xPos, int yPos, int zindex)
         {
-            Position.x = xPos;
-            Position.y = yPos;
+            AddComponent<TransformComponent>();
             Shared.objects.Add(this);
             this.ZIndex = zindex;
             Shared.window.Reorder();
         }
+
         #endregion
         
         
@@ -80,8 +83,8 @@ namespace DistantEngine.Objects
         /// </summary>
         public void UpdatePos(int xObjPos, int yObjPos)
         {
-            Position.x += xObjPos;
-            Position.y -= yObjPos;
+            GetComponent<TransformComponent>().Position.x += xObjPos;
+            GetComponent<TransformComponent>().Position.y -= yObjPos;
         }
         /// <summary>
         /// Update all components belonging to object

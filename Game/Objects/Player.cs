@@ -16,11 +16,14 @@ namespace Game.Objects
         private float jump;
         public bool IsGrounded;
         private DateTime dateTime1, dateTime2;
+        private PhysicsComponent phys;
 
         public Player(string path, int xPos, int yPos, int refH, int refW) : base(xPos, yPos)
         {
             AddComponent<SpriteComponent>();
             AddComponent<ColliderComponent>();
+            AddComponent<PhysicsComponent>();
+            phys = GetComponent<PhysicsComponent>();
             AddComponent<Input>();
             GetComponent<SpriteComponent>().Initialise(path, 320, 320, 32, 32);
             IsGrounded = true;
@@ -75,23 +78,8 @@ namespace Game.Objects
                     IsGrounded = false;
                 }
 
-                Position.x += h;
-                Position.y += v;
-            }
-            else
-            {
-                dateTime2 = DateTime.Now;
-                var diffInSeconds = -(dateTime1 - dateTime2).TotalSeconds;
-                if (diffInSeconds < 1)
-                {
-                    Console.WriteLine(diffInSeconds);
-                    Position.y -= 1;
-                }
-
-                if (diffInSeconds > 1)
-                {
-                    Position.y += 1;
-                }
+                phys.Transform.Position.x += h;
+                phys.Transform.Position.y += v;
             }
         }
     }

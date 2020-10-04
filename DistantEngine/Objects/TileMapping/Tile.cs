@@ -9,7 +9,8 @@ namespace DistantEngine.Objects.TileMapping
 {
     public class Tile
     {
-        public Vector2D Position { get; set; } = new Vector2D();
+        private int id;
+        private static int lastID;
         private Dictionary<Type, SortedList<int, ITileComponent>> _table = new Dictionary<Type, SortedList<int, ITileComponent>>();
         public Dictionary<Type, SortedList<int, ITileComponent>> Table
         {
@@ -17,11 +18,19 @@ namespace DistantEngine.Objects.TileMapping
             set => _table = value;
         }
 
+        public int Id
+        {
+            get => id;
+            set => id = value;
+        }
+
         /// <summary>
         /// Constructor for TileMap. Allows for XML storage.
         /// </summary>
         public Tile()
         {
+            id = lastID;
+            lastID++;
         }
 
         public virtual void Initialise()

@@ -11,7 +11,7 @@ namespace DistantEngine.Objects.Components
         {
             
         }
-        public void Initialise()
+        public void Initialise(GameObject obj)
         {
             throw new System.NotImplementedException();
         }

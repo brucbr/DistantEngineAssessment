@@ -82,5 +82,19 @@
         {
             return vec1.Divide(vec2);
         }
+
+        public static Vector2D operator *(Vector2D vec1, float scalar)
+        {
+            vec1.x *= scalar;
+            vec1.y *= scalar;
+            return vec1;
+        }
+        
+        public static Vector2D operator /(Vector2D vec1, float scalar)
+        {
+            vec1.x /= scalar;
+            vec1.y /= scalar;
+            return vec1;
+        }
     }
 }

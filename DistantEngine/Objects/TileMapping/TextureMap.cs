@@ -15,6 +15,10 @@ namespace DistantEngine.Graphics
         private readonly IntPtr _water;
         private int[,] _map = new int[20, 25];
         private List<Tile> tiles;
+        public List<Tile> Tiles
+        {
+            get => tiles;
+        }
 
         /// <summary>
         /// Example tile map
@@ -83,28 +87,27 @@ namespace DistantEngine.Graphics
                     {
                         case 0:
                             tile.Initialise();
-                            tile.Position.x = column * 32;
-                            tile.Position.y = row * 32;
+                            tile.AddComponent<TransformComponent>();
+                            tile.GetComponent<TransformComponent>().Position.x = column * 32;
+                            tile.GetComponent<TransformComponent>().Position.y = row * 32;
                             tile.AddComponent<SpriteComponent>();
                             tile.GetComponent<SpriteComponent>().Initialise(_water, 32, 32, 0, 0, 32, 32);
                             break;
                         case 1:
                             tile.Initialise();
-                            tile.Position.x = column * 32;
-                            tile.Position.y = row * 32;
+                            tile.AddComponent<TransformComponent>();
+                            tile.GetComponent<TransformComponent>().Position.x = column * 32;
+                            tile.GetComponent<TransformComponent>().Position.y = row * 32;
                             tile.AddComponent<SpriteComponent>();
                             tile.GetComponent<SpriteComponent>().Initialise(_dirt, 32, 32, 0, 0, 32, 32);
-                            tile.Position.x = column * 32;
-                            tile.Position.y = row * 32;
                             break;
                         case 2:
                             tile.Initialise();
-                            tile.Position.x = column * 32;
-                            tile.Position.y = row * 32;
+                            tile.AddComponent<TransformComponent>();
+                            tile.GetComponent<TransformComponent>().Position.x = column * 32;
+                            tile.GetComponent<TransformComponent>().Position.y = row * 32;
                             tile.AddComponent<SpriteComponent>();
                             tile.GetComponent<SpriteComponent>().Initialise(_grass, 32, 32, 0, 0, 32, 32);
-                            tile.Position.x = column * 32;
-                            tile.Position.y = row * 32;
                             break;
                     }
 

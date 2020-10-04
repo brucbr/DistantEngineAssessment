@@ -1,5 +1,6 @@
 ﻿using System;
 using DistantEngine.Graphics;
+using DistantEngine.Objects.TileMapping;
 using SDL2;
 
 namespace DistantEngine.Objects.Components
@@ -8,7 +9,7 @@ namespace DistantEngine.Objects.Components
     {
         public string direction;
         private SDL.SDL_Rect _rect;
-        private GameObject BaseObject;
+        private dynamic BaseObject;
         public SDL.SDL_Rect Rect => _rect;
 
         public bool Collided(SDL.SDL_Rect obj1, SDL.SDL_Rect obj2)
@@ -29,15 +30,11 @@ namespace DistantEngine.Objects.Components
             return Collided(this.Rect, col2.Rect);
         }
         
-        public ColliderComponent(GameObject obj)
+        public ColliderComponent(dynamic obj)
         {
             BaseObject = obj;
             _rect = BaseObject.GetComponent<SpriteComponent>().Dst;
 
-        }
-        public void Initialise()
-        {
-            
         }
 
         public void Update()
