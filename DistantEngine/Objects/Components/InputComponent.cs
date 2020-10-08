@@ -5,9 +5,9 @@ using SDL2;
 
 namespace DistantEngine.Objects.Components
 {
-    public class Input : IGoComponent
+    public class InputComponent : IGoComponent
     {
-        public Input(GameObject obj)
+        public InputComponent(GameObject obj)
         {
             
         }

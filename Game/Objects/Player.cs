@@ -20,32 +20,27 @@ namespace Game.Objects
 
         public Player(string path, int xPos, int yPos, int refH, int refW) : base(xPos, yPos)
         {
-            AddComponent<SpriteComponent>();
-            AddComponent<ColliderComponent>();
-            AddComponent<PhysicsComponent>();
-            phys = GetComponent<PhysicsComponent>();
-            AddComponent<Input>();
-            GetComponent<SpriteComponent>().Initialise(path, 320, 320, 32, 32);
+            AddComponent<InputComponent>();
             IsGrounded = true;
         }
         [SuppressMessage("ReSharper.DPA", "DPA0001: Memory allocation issues")]
         public override void Update()
         {
-            if (GetComponent<Input>() == null) return;
+            if (GetComponent<InputComponent>() == null) return;
             
             base.Update();
             if (IsGrounded)
             {
-                if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_UP) &&
-                    GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_DOWN))
+                if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_UP) &&
+                    GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_DOWN))
                 {
                     v = 0;
                 }
-                else if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_DOWN))
+                else if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_DOWN))
                 {
                     v = 1;
                 }
-                else if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_UP))
+                else if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_UP))
                 {
                     v = -1;
                 }
@@ -54,16 +49,16 @@ namespace Game.Objects
                     v = 0;
                 }
 
-                if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_LEFT) &&
-                    GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_RIGHT))
+                if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_LEFT) &&
+                    GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_RIGHT))
                 {
                     h = 0;
                 }
-                else if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_LEFT))
+                else if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_LEFT))
                 {
                     h = -1;
                 }
-                else if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_RIGHT))
+                else if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_RIGHT))
                 {
                     h = 1;
                 }
@@ -72,14 +67,14 @@ namespace Game.Objects
                     h = 0;
                 }
 
-                if (GetComponent<Input>().GetKey(SDL.SDL_Keycode.SDLK_SPACE))
+                if (GetComponent<InputComponent>().GetKey(SDL.SDL_Keycode.SDLK_SPACE))
                 {
                     dateTime1 = DateTime.Now;
                     IsGrounded = false;
                 }
 
-                phys.Transform.Position.x += h;
-                phys.Transform.Position.y += v;
+                this.GetComponent<TransformComponent>().Position.x += h;
+                this.GetComponent<TransformComponent>().Position.y += v;
             }
         }
     }

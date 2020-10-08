@@ -58,3 +58,4 @@ C:/Users/Barney/RiderProjects/DistantEngine/Game/bin/Debug/netcoreapp3.1/assets/
 /home/barney/Documents/DistantEngine-master/Game/obj/Debug/netcoreapp3.1/Game.dll
 /home/barney/Documents/DistantEngine-master/Game/obj/Debug/netcoreapp3.1/Game.pdb
 /home/barney/Documents/DistantEngine-master/Game/obj/Debug/netcoreapp3.1/Game.genruntimeconfig.cache
+/home/barney/Documents/DistantEngine-master/Game/bin/Debug/netcoreapp3.1/assets/imageedit_4_5319931905.png

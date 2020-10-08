@@ -8,19 +8,22 @@
         <e p="DistantEngine.csproj" t="IncludeRecursive" />
         <e p="Graphics" t="Include">
           <e p="Index.cs" t="Include" />
-          <e p="Texture.cs" t="Include" />
+          <e p="TextureManager.cs" t="Include" />
           <e p="Window.cs" t="Include" />
         </e>
         <e p="Objects" t="Include">
           <e p="Components" t="Include">
+            <e p="AnimationComponent.cs" t="Include" />
             <e p="ColliderComponent.cs" t="Include" />
-            <e p="Input.cs" t="Include" />
+            <e p="InputComponent.cs" t="Include" />
             <e p="PhysicsComponent.cs" t="Include" />
             <e p="SpriteComponent.cs" t="Include" />
             <e p="TransformComponent.cs" t="Include" />
           </e>
-          <e p="GameObject.cs" t="Include" />
-          <e p="IGOComponent.cs" t="Include" />
+          <e p="GameObject" t="Include">
+            <e p="GameObject.cs" t="Include" />
+            <e p="IGOComponent.cs" t="Include" />
+          </e>
           <e p="TileMapping" t="Include">
             <e p="ITileComponent.cs" t="Include" />
             <e p="TextureMap.cs" t="Include" />
@@ -47,6 +50,7 @@
         <e p="assets" t="Include">
           <e p="dirt.png" t="Include" />
           <e p="grass.png" t="Include" />
+          <e p="imageedit_4_5319931905.png" t="Include" />
           <e p="player.png" t="Include" />
           <e p="water.png" t="Include" />
         </e>

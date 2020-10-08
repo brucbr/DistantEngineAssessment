@@ -12,16 +12,14 @@ namespace DistantEngine.Graphics
     /// <summary>
     ///     Collection of all methods related to texture management
     /// </summary>
-    public static class Texture
+    public static class TextureManager
     {
         
         public static IntPtr Set(string path)
         {
             IntPtr texture, surface;
             surface = SDL_image.IMG_Load(path);
-            Console.WriteLine(SDL.SDL_GetError());
             texture = SDL.SDL_CreateTextureFromSurface(Shared.Renderer, surface);
-            Console.WriteLine(SDL.SDL_GetError());
             return texture;
         }
 

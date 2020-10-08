@@ -39,9 +39,9 @@ namespace DistantEngine.Objects
         {
             // Set global x and y positions
             AddComponent<TransformComponent>();
-            Shared.objects.Add(this);
+            Shared.Objects.Add(this);
             this.ZIndex = 1;
-            Shared.window.Reorder();
+            Shared.Window.Reorder();
         }
 
         /// <summary>
@@ -53,9 +53,9 @@ namespace DistantEngine.Objects
         public GameObject(int xPos, int yPos, int zindex)
         {
             AddComponent<TransformComponent>();
-            Shared.objects.Add(this);
+            Shared.Objects.Add(this);
             this.ZIndex = zindex;
-            Shared.window.Reorder();
+            Shared.Window.Reorder();
         }
 
         #endregion
@@ -89,7 +89,7 @@ namespace DistantEngine.Objects
         /// <summary>
         /// Update all components belonging to object
         /// </summary>
-        public void UpdateComponents()
+        private void UpdateComponents()
         {
             foreach (var (key, value) in _table)
             {

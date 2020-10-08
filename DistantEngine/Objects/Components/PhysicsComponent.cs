@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using DistantEngine.Graphics;
 
 namespace DistantEngine.Objects.Components
 {
@@ -23,25 +22,23 @@ namespace DistantEngine.Objects.Components
             _lastTime = DateTime.Now;
             try
             {
-                Transform = obj.GetComponent<TransformComponent>().Clone() as TransformComponent;
-                obj.Table[typeof(TransformComponent)][1] = Transform;
+                Transform = (TransformComponent) obj.Table[typeof(TransformComponent)][1];
             }
             catch (KeyNotFoundException e)
             {
                 obj.AddComponent<TransformComponent>();
-                Transform = obj.GetComponent<TransformComponent>();
+                Transform = (TransformComponent) obj.Table[typeof(TransformComponent)][1];
             }
         }
 
         public void Update()
         {
-            /*
             var currentTime = DateTime.Now;
             float timeDifference = Convert.ToSingle(System.Math.Abs(currentTime.Subtract(_lastTime).TotalSeconds));
             ApplyGravity();
             Velocity += Acceleration * timeDifference;
             Transform.Position += Velocity;
-            _lastTime = currentTime;*/
+            _lastTime = currentTime;
         }
 
         public void Draw()

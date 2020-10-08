@@ -1,5 +1,6 @@
 using System;
 using DistantEngine.Graphics;
+using SDL2;
 
 namespace DistantEngine.Objects.Components
 {
@@ -11,7 +12,7 @@ namespace DistantEngine.Objects.Components
         {
             
         }
-
+        
         public void Update()
         {
             

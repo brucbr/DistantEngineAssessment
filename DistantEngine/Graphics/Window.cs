@@ -29,7 +29,7 @@ namespace DistantEngine.Graphics
         /// <param name="title"></param>
         public Window(int width, int height, string title)
         {
-            Shared.window = this;
+            Shared.Window = this;
             _flags = SDL.SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
             Running = false;
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) == 0)
@@ -61,7 +61,7 @@ namespace DistantEngine.Graphics
         #region Window Constructor Elaborate
         public Window(int width, int height, int xPos, int yPos, bool fullscreen, string title)
         {
-            Shared.window = this;
+            Shared.Window = this;
             if (fullscreen) { _flags = SDL.SDL_WindowFlags.SDL_WINDOW_RESIZABLE; }
             Running = false;
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) == 0)
@@ -106,7 +106,7 @@ namespace DistantEngine.Graphics
         public void HandleEvents()
         {
             SDL.SDL_PollEvent(out SDL.SDL_Event e);
-            Shared.e = e;
+            Shared.E = e;
             QuitCheck();
         }
         
@@ -115,7 +115,7 @@ namespace DistantEngine.Graphics
         /// </summary>
         public void Update()
         {
-            foreach (GameObject obj in Shared.objects)
+            foreach (GameObject obj in Shared.Objects)
             {
                 obj.Update();
             }
@@ -128,7 +128,7 @@ namespace DistantEngine.Graphics
         {
             SDL.SDL_RenderClear(_renderer);
             Shared.CurrentLevel.Draw();
-            foreach (GameObject obj in Shared.objects)
+            foreach (GameObject obj in Shared.Objects)
             {
                 obj.Draw();
             }
@@ -150,7 +150,7 @@ namespace DistantEngine.Graphics
         /// </summary>
         public void QuitCheck()
         {
-            switch (Shared.e.type)
+            switch (Shared.E.type)
             {
                 case SDL.SDL_EventType.SDL_QUIT:
                     SDL.SDL_Quit();
@@ -164,7 +164,7 @@ namespace DistantEngine.Graphics
         /// </summary>
         public void Reorder()
         {
-            Shared.objects = Shared.objects.OrderBy(obj => obj.ZIndex).ToList<GameObject>();
+            Shared.Objects = Shared.Objects.OrderBy(obj => obj.ZIndex).ToList<GameObject>();
         }
     }
     #endregion
@@ -175,21 +175,10 @@ namespace DistantEngine.Graphics
     public static class Shared
     {
         public static IntPtr Renderer { get; set; } = IntPtr.Zero;
-        public static Window window { get; set; } = null;
-        public static List<GameObject> objects
-        {
-            get => _objects;
-            set => _objects = value;
-        }
+        public static Window Window { get; set; } = null;
+        public static List<GameObject> Objects { get; set; } = new List<GameObject>();
 
         public static TextureMap CurrentLevel;
-        private static List<GameObject> _objects = new List<GameObject>();
-        private static SDL.SDL_Event _e;
-
-        public static SDL.SDL_Event e
-        {
-            get => _e;
-            set => _e = value;
-        }
+        public static SDL.SDL_Event E { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace DistantEngine.Objects.Components
             Dst.w = dw;
             Dst.x = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.x);
             Dst.y = Convert.ToInt32(BaseObject.GetComponent<TransformComponent>().Position.y);
-            _tex = Texture.Set(path);
+            _tex = TextureManager.Set(path);
         }
         
         /// <summary>
@@ -90,7 +90,7 @@ namespace DistantEngine.Objects.Components
         /// </summary>
         public void Draw()
         {
-            Texture.Draw(_tex, _src, Dst);
+            TextureManager.Draw(_tex, _src, Dst);
         }
     }
 }

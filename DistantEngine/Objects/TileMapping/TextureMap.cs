@@ -57,9 +57,9 @@ namespace DistantEngine.Graphics
         /// </summary>
         public TextureMap()
         {
-            _dirt = Texture.Set("assets/dirt.jpg");
-            _grass = Texture.Set("assets/grass.png");
-            _water = Texture.Set("assets/water.jpg");
+            _dirt = TextureManager.Set("assets/dirt.jpg");
+            _grass = TextureManager.Set("assets/grass.png");
+            _water = TextureManager.Set("assets/water.jpg");
             Console.WriteLine(SDL.SDL_GetError());
             _dst.x = 0;
             _dst.y = 0;

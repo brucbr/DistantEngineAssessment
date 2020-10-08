@@ -15,11 +15,12 @@ namespace Game
             Shared.CurrentLevel = new TextureMap();
             Shared.CurrentLevel.LoadMap(Shared.CurrentLevel._lvl1);
             var player = new Player("assets/player.png", 0, 0, 32, 32);
-            var player1Col = player.GetComponent<ColliderComponent>();
+            player.AddComponent<AnimationComponent>();
+            var Animator = player.GetComponent<AnimationComponent>();
+            Animator.NewAnimation("coin", 8, 0, 100, 32, 32, "assets/coin.png");
+            Animator.SetAnimation("coin");
             while (win.Running)
             {
-                Console.WriteLine("Transform Pos: " + player.GetComponent<TransformComponent>().Position.x + " " +
-                                  player.GetComponent<TransformComponent>().Position.y);
                 win.FrameCheck();
                 win.HandleEvents();
                 win.Update();
