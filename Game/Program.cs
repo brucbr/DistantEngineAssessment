@@ -15,10 +15,6 @@ namespace Game
             Shared.CurrentLevel = new TextureMap();
             Shared.CurrentLevel.LoadMap(Shared.CurrentLevel._lvl1);
             var player = new Player("assets/player.png", 0, 0, 32, 32);
-            player.AddComponent<AnimationComponent>();
-            var Animator = player.GetComponent<AnimationComponent>();
-            Animator.NewAnimation("coin", 8, 0, 100, 32, 32, "assets/coin.png");
-            Animator.SetAnimation("coin");
             while (win.Running)
             {
                 win.FrameCheck();

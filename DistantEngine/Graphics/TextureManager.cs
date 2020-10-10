@@ -27,6 +27,14 @@ namespace DistantEngine.Graphics
         {
             SDL.SDL_RenderCopy(Shared.Renderer, texture, ref src, ref dst);
         }
+        
+        public static void Draw(IntPtr texture, SDL.SDL_Rect src, SDL.SDL_Rect dst, SDL.SDL_RendererFlip flip)
+        {
+            SDL.SDL_Point centre;
+            centre.x = dst.x;
+            centre.y = dst.y;
+            SDL.SDL_RenderCopyEx(Shared.Renderer, texture, ref src, ref dst, 0, ref centre, flip);
+        }
     }
     #endregion
 }
